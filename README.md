@@ -117,14 +117,18 @@ sudo docker run -ti -v $(pwd):/shared msmkbr/computational-workflows bash
    repository.  ``git add``, ``git commit`` and ``git push`` them.
 
 ```
-# Add your commands here
+git add .
+git commit -m "add python files and update read me"
+git push
+
 ```
 
 2. Start a Docker container using your image and share your repository into a
    directory `/root/shared` into the container.
 
 ```
-# Add your commands here
+sudo docker run -ti -v $(pwd):/shared msmkbr/computational-workflows bash
+
 ```
 
 3. Run the tests inside the container by going to `/root/shared` and running the
