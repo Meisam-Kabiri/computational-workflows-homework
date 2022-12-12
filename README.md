@@ -92,7 +92,10 @@ RUN apt-get -y update && \
    `<yourdockerhubusername>/computational-workflows`.
 
 ```
-# Add your commands here
+sudo docker build .
+sudo docker login
+sudo docker tag  d771ce60a9f6 msmkbr/computational-workflows
+sudo docker push msmkbr/computational-workflows
 ```
 
 ## Run a container, and share in files from the host.
@@ -102,7 +105,8 @@ RUN apt-get -y update && \
    an interactive prompt inside the running container.
 
 ```
-# Add your commands here
+sudo docker run -ti -v $(pwd):/shared msmkbr/computational-workflows bash
+
 ```
 
 ## Setup a simple Python test suite
